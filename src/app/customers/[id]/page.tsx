@@ -71,22 +71,24 @@ export default function CustomerDetailsPage() {
 
   const handleSubscriptionAction = async (action: 'upgrade' | 'downgrade' | 'cancel' | 'reactivate', planId?: number) => {
     if (!customer) return
+    
+    alert('This Feature is Available Soon!')
 
-    try {
-      setActionLoading(action)
-      const response = await apiClient.updateCustomerSubscription(customer.id, action, planId)
+    // try {
+    //   setActionLoading(action)
+    //   const response = await apiClient.updateCustomerSubscription(customer.id, action, planId)
       
-      if (response.status === 'success') {
-        // Refresh customer details
-        await fetchCustomerDetails()
-      } else {
-        setError(response.message || `Failed to ${action} subscription`)
-      }
-    } catch (error: any) {
-      setError(error.response?.data?.message || 'An error occurred')
-    } finally {
-      setActionLoading(null)
-    }
+    //   if (response.status === 'success') {
+    //     // Refresh customer details
+    //     await fetchCustomerDetails()
+    //   } else {
+    //     setError(response.message || `Failed to ${action} subscription`)
+    //   }
+    // } catch (error: any) {
+    //   setError(error.response?.data?.message || 'An error occurred')
+    // } finally {
+    //   setActionLoading(null)
+    // }
   }
 
   if (loading) {
