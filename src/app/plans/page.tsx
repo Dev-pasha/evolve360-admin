@@ -157,7 +157,7 @@ export default function PlansPage() {
 
         {/* Plans Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {plans.map((plan) => (
+          {plans?.map((plan) => (
             <Card key={plan.id} className="hover:shadow-lg transition-shadow">
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
@@ -228,14 +228,14 @@ export default function PlansPage() {
                     </div>
                     <div className="text-center p-3 bg-yellow-50 rounded-lg">
                       <div className="text-lg font-bold text-yellow-600">
-                        {plan.analytics.trialSubscriptions}
+                        {plan?.analytics?.trialSubscriptions}
                       </div>
                       <div className="text-xs text-yellow-600">Trial</div>
                     </div>
                   </div>
                   <div className="text-center p-3 bg-green-50 rounded-lg">
                     <div className="text-lg font-bold text-green-600">
-                      {formatCurrency(plan.analytics.monthlyRevenue)}
+                      {formatCurrency(plan?.analytics?.monthlyRevenue) || '$0.00'}
                     </div>
                     <div className="text-xs text-green-600">Monthly Revenue</div>
                   </div>
