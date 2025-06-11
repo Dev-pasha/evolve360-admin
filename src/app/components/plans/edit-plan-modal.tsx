@@ -153,18 +153,18 @@ export default function EditPlanModal({ plan, onClose, onSuccess }: EditPlanModa
               </div>
               <div>
                 <span className="text-blue-700">Trial:</span>
-                <span className="font-medium ml-1">{plan.analytics.trialSubscriptions}</span>
+                <span className="font-medium ml-1">{plan.analytics?.trialSubscriptions}</span>
               </div>
               <div>
                 <span className="text-blue-700">Total:</span>
-                <span className="font-medium ml-1">{plan.analytics.totalSubscriptions}</span>
+                <span className="font-medium ml-1">{plan.analytics?.totalSubscriptions}</span>
               </div>
               <div>
                 <span className="text-blue-700">Revenue:</span>
-                <span className="font-medium ml-1">${plan.analytics.monthlyRevenue}</span>
+                <span className="font-medium ml-1">${plan.analytics?.monthlyRevenue}</span>
               </div>
             </div>
-            {plan.analytics.activeSubscriptions > 0 && (
+            {plan.analytics?.activeSubscriptions > 0 && (
               <p className="text-xs text-blue-700 mt-2">
                 ⚠️ Reducing limits below current usage may affect existing customers
               </p>
